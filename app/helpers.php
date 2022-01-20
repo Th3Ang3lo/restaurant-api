@@ -39,3 +39,16 @@ function dispatchError($validator){
         }, $validator->errors()->toArray()));
     }
 }
+
+function fixRatingValues($food) {
+    $food->rating_note_total = intval($food->rating_note_total);
+
+    $rating_note_total = $food->rating_note_total;
+    $rating_total = $food->rating_total;
+
+    $isMoreThanZero = ($rating_note_total > 0 && $rating_total > 0);
+    $food->rating_media =  $isMoreThanZero ? ($rating_note_total / $rating_total) : 0;
+    $food->rating_media = intval($food->rating_media);
+
+    return $food;
+}

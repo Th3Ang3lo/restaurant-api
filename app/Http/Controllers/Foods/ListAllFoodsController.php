@@ -18,6 +18,7 @@ class ListAllFoodsController extends Controller
 
             return ok($listAllFoods);
         } catch (\Exception $error) {
+            dd($error);
             return error($error);
         }
     }

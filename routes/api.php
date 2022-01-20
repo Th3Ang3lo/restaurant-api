@@ -12,7 +12,7 @@ $router->group(['prefix' => 'api', 'as' => 'api'], function() use ($router){
     // /foods/*
     $router->group(['prefix' => 'foods', 'as' => 'Foods'], function() use ($router) {
         $router->get('/', 'Foods\ListAllFoodsController@handle');
-        $router->get('/featured', function () {});
+        $router->get('/featured', 'Foods\ListFeaturedFoodsController@handle');
 
         $router->post('/rate/{foodID}/note/{note}', 'Rate\RateFoodController@handle');
     });

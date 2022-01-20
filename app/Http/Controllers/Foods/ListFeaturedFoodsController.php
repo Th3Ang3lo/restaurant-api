@@ -13,11 +13,12 @@ class ListFeaturedFoodsController extends Controller
     public function handle(Request $request, Response $response): Response
     {
         try {
-//            $listFeaturedFoodsService = new ListAllFoodsService();
-//            $listFeaturedFoods = $listFeaturedFoodsService->execute();
+            $listFeaturedFoodsService = new ListAllFoodsService();
+            $listFeaturedFoods = $listFeaturedFoodsService->execute();
 
-//            return ok($listAllFoods);
+            return ok($listFeaturedFoods);
         } catch (\Exception $error) {
+            dd($error);
             return error($error);
         }
     }

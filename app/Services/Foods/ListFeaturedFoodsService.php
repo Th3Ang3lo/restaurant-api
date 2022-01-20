@@ -4,7 +4,7 @@ namespace App\Services\Foods;
 
 use App\Repositories\Foods\FoodRepository;
 
-class ListAllFoodsService
+class ListFeaturedFoodsService
 {
     private FoodRepository  $foodRepository;
 
